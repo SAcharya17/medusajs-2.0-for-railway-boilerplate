@@ -168,8 +168,8 @@ export default function ProductActions({
           {!selectedVariant
             ? "Select variant"
             : !inStock
-            ? "Out of stock"
-            : "Add to cart"}
+              ? "Out of stock"
+              : "Add to carts"}
         </Button>
         <ErrorMessage error={error} data-testid="add-product-error-message" />
         <MobileActions

@@ -440,7 +440,12 @@ export async function updateRegion(countryCode: string, currentPath: string) {
   }
 
   if (cartId) {
-    await updateCart({ region_id: region.id })
+    try {
+      await updateCart({ region_id: region.id })
+    } catch (error: any) {
+      // Stale or deleted cart ID from a previous database session
+      await removeCartId()
+    }
   }
 
   // Prices, availability and the cart total are all region-dependent, so
