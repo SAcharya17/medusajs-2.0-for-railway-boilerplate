@@ -64,6 +64,9 @@ const medusaConfig = {
   },
   modules: [
     {
+      resolve: './src/modules/logo',
+    },
+    {
       key: Modules.FILE,
       resolve: '@medusajs/file',
       options: {
